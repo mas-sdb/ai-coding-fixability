@@ -1,5 +1,4 @@
-# 📘 **Language Ecosystem Evaluation Model for the AI Era  
-(4 Layers × 9 Axes × Verification Loop)**
+# 📘 Language Ecosystem Evaluation Model for the AI Era (4 Layers × 9 Axes × Verification Loop)
 
 ---
 
@@ -61,7 +60,7 @@ but rather these two capabilities:
 ### **・The ability to accurately provide AI with the information needed for fixes**
 
 In an era where AI continuously generates code,  
-what matters is not "producing correct code in one shot,"  
+what matters is not "producing correct code in one shot",  
 but whether we can stably maintain the correction loop of:
 
 - **Correction**  
@@ -274,6 +273,9 @@ along two dimensions: **Implementation (Static)** and **Runtime**.
 
 Language ecosystems can be structured into the following 4 layers:
 
+- Layers 1-3 represent "official" semantics
+- Layer 4 represents "social" semantics
+
 ---
 
 ## ## 4.1 Layer 1: Semantic Core Layer
@@ -331,7 +333,7 @@ Contributions: ①②⑥⑦
 
 ---
 
-## ## AI View (Outside → Center)
+## ## 5.1 AI View (Outside → Center)
 
 ```
 Community Semantics
@@ -343,11 +345,17 @@ Semantic Service Layer
 Semantic Core Layer
 ```
 
-AI absorbs semantics from the outside and understands toward the center.
+AI absorbs semantics from the outside and understands toward the center (language specification).
+
+In other words, AI infers by reverse-engineering from outer data:
+ - First, observe "how humans write" and "how it's used" in large quantities (training data source)
+ - Grasp semantics by observing massive API usage patterns
+ - Absorb the structural semantics of the language
+ - Infer the syntax of the language
 
 ---
 
-## ## Human View (Center → Outside)
+## ## 5.2 Human View (Center → Outside)
 
 ```
 Semantic Core Layer
@@ -359,7 +367,44 @@ Dependency Semantics
 Community Semantics
 ```
 
-Humans expand understanding from the center (specifications) outward.
+Humans expand their understanding from the center (language specification) outward.
+
+## ## 5.3 AI and Human Weaknesses Are in Completely Opposite Directions
+
+> When semantic layers break, AI and humans have completely opposite vulnerabilities.
+
+| Layer | AI Vulnerability | Human Vulnerability |
+| - | - | - |
+| 4 Community | Critical | Minor impact |
+| 3 Dependency | Major impact | Moderate |
+| 2 Service | Moderate | Major impact |
+| 1 Core | Minor impact | Critical |
+
+> AI: Outer-layer dependent → Vulnerable when outer layers break  
+> Human: Inner-layer dependent → Vulnerable when inner layers break
+
+## ## 5.4 AI and Human "Strengths/Weaknesses" Are Also Reversed
+
+- What AI is good at:
+  - Language conversion (Python → Rust → TS)
+  - Pseudocode interpretation
+  - Natural language to code generation
+  - Semantic refactoring of code
+
+- What humans are good at:
+  - Fine nuances of syntax
+  - Code style
+  - Readability judgment
+
+## ## 5.5 For AI, "Language" Is the Entire Ecosystem, Not Just the Specification
+
+What is "language = spec + grammar" for humans becomes "language = spec + grammar + toolchain + examples + community + culture" for AI.
+
+What humans consider "peripheral information" becomes part of semantics for AI.
+
+In other words, in the AI era, languages are not defined solely by their specifications, but derive meaning through community practice.
+
+We call this perspective **Language-as-Ecosystem** — treating the entire ecosystem as the definition of the language itself.
 
 ---
 
