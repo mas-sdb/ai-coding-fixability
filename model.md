@@ -27,11 +27,11 @@ This framework was developed as a **thought experiment** based on practical expe
 This framework's structural approach can be adapted to identify mis-inference patterns in other domains (security, performance, etc.) as observation-specific evaluation frameworks.
 
 **How to Use:**
+- Use [diagnostic_prompt.md](./diagnostic_prompt.md) for AI-powered diagnostics
 - As a starting point for language selection discussions
-- For experimental evaluation in actual projects
+- For practical evaluation in actual projects
+  - Triggered at project start or when project dependencies are updated
 - As inspiration for developing your own evaluation criteria
-
-Improvement suggestions via Issues and Pull Requests are welcome!
 
 ---
 
@@ -73,7 +73,7 @@ but the **quality and quantity of semantic information** provided by
 the entire ecosystem: language, runtime, toolchain, and community.
 
 Starting from this philosophy,  
-the evaluation model of **Verification Loop × 9 Axes × 4 Layers** was born.
+the evaluation model of **4 Layers × 9 Axes × Verification Loop** was born.
 
 ---
 
@@ -399,9 +399,9 @@ Semantic Layers are the True Essence
 
 ---
 
-## **A-1. Syntax is Merely a "Presentation Layer"**
+## **A-1. Syntax is Merely "Surface"**
 
-- UI for human reading  
+- Language syntax functions as a user interface for both AI and humans  
 - Just character strings to AI  
 - Same structure if semantics match, regardless of different grammar  
 - No fundamental difference between Python, C#, or JavaScript  
@@ -452,7 +452,7 @@ This ensures:
 ## **A-4. Appendix A Summary**
 
 > **In the AI era, the true essence of code is the semantic layer,  
-> and syntax is merely UI.**
+> and syntax is the user interface for both AI and humans.**
 
 ---
 

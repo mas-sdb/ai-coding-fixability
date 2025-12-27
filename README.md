@@ -46,6 +46,37 @@ This framework's structural approach can be adapted to identify mis-inference pa
 
 ## 📚 Documentation
 
+### **Framework Documents**
+
+This repository contains three interconnected document types:
+
+#### **1. Theoretical Framework ([model.md](./model.md))**
+- **Purpose:** Theoretical foundation with 4-layer architecture and 9-axis evaluation
+- **Structure:** 4 Semantic Layers × 9 Evaluation Axes × Verification Loop
+- **Audience:** Researchers, framework designers, those seeking deep understanding
+
+#### **2. Diagnostic Tool ([diagnostic_prompt.md](./diagnostic_prompt.md))**
+- **Purpose:** Practical diagnostic tool that transforms the 4-layer model into 9 diagnostic axes
+- **Structure:** 9 diagnostic axes for identifying AI mis-inference points
+- **Audience:** AI coding assistant users, project teams, developers writing AGENT.md
+- **Note:** Focuses on the 9 axes; the 4-layer representation is abstracted away for practical use
+
+#### **3. Diagnostic Results ([samples/](./samples/))**
+- **Purpose:** Real-world examples of applying the diagnostic prompt to specific language configurations
+- **Structure:** Language + version + context → 9-axis diagnostic results
+- **Audience:** Users seeking concrete examples, teams evaluating their tech stack
+
+**Relationship:**
+```
+Theoretical Model (model.md)
+  ↓ Practical transformation
+Diagnostic Prompt (diagnostic_prompt.md)
+  ↓ Applied to real projects
+Diagnostic Samples (samples/)
+```
+
+### **Language Versions**
+
 - **[English Version](./model.md)** - Full framework documentation
 - **[日本語版](./ja/README.md)** - 日本語ドキュメント
 
