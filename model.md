@@ -27,6 +27,9 @@ This framework's structural approach can be adapted to identify mis-inference pa
 
 **How to Use:**
 - Use [diagnostic_prompt.md](./diagnostic_prompt.md) for AI-powered diagnostics
+  - **Note:** Any AI model can be used for diagnostics
+  - **Recommended:** Use with appropriate context and project-specific information
+  - **Limitation:** Diagnostic quality depends on the AI model's training data and capabilities
 - As a starting point for language selection discussions
 - For practical evaluation in actual projects
   - Triggered at project start or when project dependencies are updated
@@ -438,9 +441,9 @@ a three-layer structure of **Philosophy → Practice → Theory**.
 
 ---
 
-# ## **Appendix A  
+# ## Appendix A  
 Semantic Layers are the True Essence  
-— Moving Beyond Syntax-Centrism —**
+— Moving Beyond Syntax-Centrism —
 
 ---
 
@@ -501,9 +504,9 @@ This ensures:
 
 ---
 
-# ## **Appendix B  
+# ## Appendix B  
 Test Libraries Function as "Specification Complements"  
-— Practical Observations that Language Specifications Alone are Insufficient —**
+— Practical Observations that Language Specifications Alone are Insufficient —
 
 ---
 
@@ -591,9 +594,9 @@ However, this is:
 
 ---
 
-# ## **Appendix C  
+# ## Appendix C  
 The AI Era Perspective: Compilation's Value Lies in Semantic Verification  
-— A Unified View of Static and Dynamic Languages —**
+— A Unified View of Static and Dynamic Languages —
 
 ---
 
@@ -701,5 +704,3 @@ Tests and runtime validation that effectively serve as specifications in languag
 
 **Semantic Verification Engine**  
 The redefined role of compilers in the AI era: not just code generation, but semantic consistency validation.
-
----

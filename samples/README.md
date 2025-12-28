@@ -6,6 +6,8 @@ This directory contains example evaluations using the Language Ecosystem Evaluat
 
 These samples demonstrate:
 - How to apply the 9-axis evaluation model
+  - The [diagnostic_prompt](../diagnostic_prompt.md) used in these samples converts the model's abstract 9 axes into names tailored for actual project diagnostics.
+  - For details on this naming conversion, refer to the [Model Usage Guide](../model-usage-guide.md).
 - Different language ecosystems and use cases
 - Structural observations without quality rankings
 - Practical mitigation strategies for AI coding

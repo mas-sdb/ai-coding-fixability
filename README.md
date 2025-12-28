@@ -1,8 +1,6 @@
 # 📘 AI Era Language Ecosystem Evaluation Model
 > A Framework Based on Fixability and Semantic Transparency
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-
 ---
 
 ## 🌟 Overview
@@ -60,6 +58,11 @@ This repository contains three interconnected document types:
 - **Structure:** 9 diagnostic axes for identifying AI mis-inference points
 - **Audience:** AI coding assistant users, project teams, developers writing AGENT.md
 - **Note:** Focuses on the 9 axes; the 4-layer representation is abstracted away for practical use
+- **Important:**
+  - ⚠️ **Any AI model can be used** for diagnostics (not limited to specific vendors)
+  - 💡 **Use with appropriate context** and project-specific information for best results
+  - 📊 **Diagnostic quality depends** on the AI model's training data and capabilities
+  - 🔄 **Results may vary** between different AI models or versions
 
 #### **3. Diagnostic Results ([samples/](./samples/))**
 - **Purpose:** Real-world examples of applying the diagnostic prompt to specific language configurations
@@ -216,6 +219,24 @@ Identify gaps in semantic transparency:
 - Missing API documentation?
 - Inconsistent runtime behavior?
 - Poor LSP support?
+
+### **For AI-Powered Diagnostics**
+Use [diagnostic_prompt.md](./diagnostic_prompt.md) with any AI model:
+
+**Best Practices:**
+1. **Provide context:** Include language version, framework, and project-specific details
+2. **Use multiple models:** Different AI models may highlight different aspects
+3. **Focus on patterns:** Look for structural observations, not rankings
+4. **Update regularly:** Re-run diagnostics when dependencies change
+
+**Recommended Usage:**
+```
+Trigger diagnostics:
+- At project start
+- When dependencies are updated
+- When adopting new language features
+- During architecture reviews
+```
 
 ### **For Research**
 Test the hypothesis:
