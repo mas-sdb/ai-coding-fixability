@@ -520,33 +520,33 @@ Clarifying under what conditions regeneration occurs at each stage of the correc
 **Phases that emerged from observation:**
 
 ```
-① Static Knowledge (Prior Knowledge)
+Phase1 Static Knowledge (Prior Knowledge)
    - AI's training data (OSS, Q&A, official docs, blogs, etc.)
    - Language specifications, standard libraries
    - Common coding patterns
 
-② Generation (Initial Generation)
+Phase2 Generation (Initial Generation)
    - AI's initial code generation
    - From prompts and context
    
-③ Static Semantic Validation
+Phase3 Static Semantic Validation
    - Type checking
    - Syntax validation
    - Build/compilation
    - Linter validation
-   - → If failed, go to ⑦
+   - → If failed, go to Phase7
    
-④ Startup Check
+Phase4 Startup Check
    - Dependency resolution
    - Basic startup confirmation
-   - → If failed, go to ⑦
+   - → If failed, go to Phase7
    
-⑤ Test Execution
+Phase5 Test Execution
    - Unit tests
    - Integration tests
    - Specification verification (application-dependent)
    
-⑥ Test Feedback (Runtime Feedback)
+Phase6 Test Feedback (Runtime Feedback)
    - Test results
      - → If successful, loop ends
    - Error messages
@@ -555,9 +555,9 @@ Clarifying under what conditions regeneration occurs at each stage of the correc
      - Observed data is `fact`
      - Requires `semantic interpretation`
    
-⑦ Regeneration (Corrective Generation)
+Phase7 Regeneration (Corrective Generation)
    - Corrections based on feedback
-   - → Return to ③ and loop
+   - → Return to Phase3 and loop
 ```
 
 **Important realization:**
@@ -571,22 +571,22 @@ I thought this information targets not just language specifications, but the ent
 
 Analyzing the seven phases of the validation loop, organizing information sources:
 
-**① Static Knowledge Phase:**
+**Phase1 Static Knowledge Phase:**
 - AI's training data → OSS, Q&A, documentation
 - Language specifications → Official specs
 - Community practices → Blogs, tutorials
 
-**③ Static Validation Phase:**
+**Phase3 Static Validation Phase:**
 - Type system → Core language features
 - Linter → Development tools
 - API information → Metadata
 - Build tools → Ecosystem services
 
-**④ Startup Check Phase:**
+**Phase4 Startup Check Phase:**
 - Dependencies → Package management
 - Runtime environment dependencies
 
-**⑤⑥ Execution/Feedback Phase:**
+**Phase5 Phase6 Execution/Feedback Phase:**
 - Runtime → Language implementation
 - Test frameworks → External tools
 - Observability → Profilers, debuggers
@@ -993,14 +993,14 @@ Beyond this, no particular insights—just **systematic organization work**.
 
 ## ## Validation Loop and Layer Correspondence
 
-**① Static Knowledge Phase:**
+**Phase1 Static Knowledge Phase:**
 ```
 Required information: Common language usage
 Corresponding layer: Community Layer
 Evaluation criterion candidate: Public Knowledge
 ```
 
-**③ Static Semantic Validation Phase:**
+**Phase3 Static Semantic Validation Phase:**
 ```
 Required information: Type system, syntax rules, API specs
 Corresponding layer: Core Layer + Service Layer
@@ -1011,7 +1011,7 @@ Evaluation criterion candidates:
   - Error Clarity (error clarity)
 ```
 
-**④ Startup Check Phase:**
+**Phase4 Startup Check Phase:**
 ```
 Required information: Dependencies, environment configuration
 Corresponding layer: Dependency Layer
@@ -1020,7 +1020,7 @@ Evaluation criterion candidates:
   - Environment Semantics
 ```
 
-**⑤⑥ Execution/Feedback Phase:**
+**Phase5 Phase6 Execution/Feedback Phase:**
 ```
 Required information: Runtime behavior, error information
 Corresponding layer: Service Layer (runtime)

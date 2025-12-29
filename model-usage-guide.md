@@ -121,30 +121,30 @@ The 7 Phases decompose the process by which AI generates, verifies, and fixes co
 **Seven Stages of the Verification Loop:**
 
 ```
-① Static Knowledge (Prior Knowledge)
+Phase1 Static Knowledge (Prior Knowledge)
    - AI training data, language specs, common patterns
 
-② Generation (Initial Generation)
+Phase2 Generation (Initial Generation)
    - Initial code generation by AI
 
-③ Static Semantic Verification
+Phase3 Static Semantic Verification
    - Type checking, syntax validation, linter
-   - Failure → Go to ⑦
+   - Failure → Go to Phase7
 
-④ Startup Check
+Phase4 Startup Check
    - Build, dependency resolution, startup confirmation
-   - Failure → Go to ⑦
+   - Failure → Go to Phase7
 
-⑤ Test Execution
+Phase5 Test Execution
    - Unit tests, integration tests
 
-⑥ Runtime Feedback
+Phase6 Runtime Feedback
    - Test results, error messages, traces
-   - Success → End / Failure → Go to ⑦
+   - Success → End / Failure → Go to Phase7
 
-⑦ Regeneration (Corrective Generation)
+Phase7 Regeneration (Corrective Generation)
    - Fix based on feedback
-   - → Return to ③ and loop
+   - → Return to Phase3 and loop
 ```
 
 ### Applications of 7 Phases
@@ -173,9 +173,9 @@ Map which axes become obstacles at which phases during correction.
 Project-specific fixability map
 
 **Use Cases:**
-- Public Knowledge (Axis 1) is insufficient in Static Knowledge Phase (①)
-- Error Clarity (Axis 5) is unclear in Static Semantic Verification Phase (③)
-- Runtime Continuity (Axis 6) is inconsistent in Runtime Feedback (⑥)
+- Public Knowledge (Axis1) is insufficient in Static Knowledge Phase (Phase1)
+- Error Clarity (Axis5) is unclear in Static Semantic Verification Phase (Phase3)
+- Runtime Continuity (Axis6) is inconsistent in Runtime Feedback (Phase6)
 
 ### B. 4 Layers × 9 Axes (Research-Oriented)
 
@@ -186,9 +186,9 @@ Analyze which layer fluctuations appear in which axes.
 Structural understanding of language ecosystems
 
 **Use Cases:**
-- Community Layer fluctuations → Decline in Public Knowledge (Axis 1)
-- Service Layer deficiencies → Decline in Error Clarity (Axis 5)
-- Dependency Layer instability → Decline in Dependency Management (Axis 7)
+- Community Layer fluctuations → Decline in Public Knowledge (Axis1)
+- Service Layer deficiencies → Decline in Error Clarity (Axis5)
+- Dependency Layer instability → Decline in Dependency Management (Axis7)
 
 ### C. 4 Layers × 7 Phases (AI Agent Design-Oriented)
 
@@ -199,9 +199,9 @@ Organize which layer information is needed at which phase.
 Information acquisition strategy for AI agents
 
 **Use Cases:**
-- Static Knowledge Phase (①) → Community Layer
-- Static Semantic Verification Phase (③) → Core + Service Layer
-- Startup Check Phase (④) → Dependency Layer
+- Static Knowledge Phase (Phase1) → Community Layer
+- Static Semantic Verification Phase (Phase3) → Core + Service Layer
+- Startup Check Phase (Phase4) → Dependency Layer
 
 ### D. 4 Layers × 9 Axes × 7 Phases (Advanced Analysis)
 

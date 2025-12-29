@@ -122,30 +122,30 @@
 **検証ループの7段階：**
 
 ```
-① 静的知識（事前知識）
+Phase1 静的知識（事前知識）
    - AI の訓練データ、言語仕様、一般的なパターン
 
-② 生成（初期生成）
+Phase2 生成（初期生成）
    - AI による初回コード生成
 
-③ 静的意味論検証
+Phase3 静的意味論検証
    - 型チェック、構文検証、linter
-   - 失敗 → ⑦へ
+   - 失敗 → Phase7へ
 
-④ 起動チェック
+Phase4 起動チェック
    - ビルド、依存関係の解決、起動確認
-   - 失敗 → ⑦へ
+   - 失敗 → Phase7へ
 
-⑤ テスト実行
+Phase5 テスト実行
    - ユニットテスト、統合テスト
 
-⑥ 実行時フィードバック
+Phase6 実行時フィードバック
    - テスト結果、エラーメッセージ、トレース
-   - 成功 → 終了 / 失敗 → ⑦へ
+   - 成功 → 終了 / 失敗 → Phase7へ
 
-⑦ 再生成（修正的生成）
+Phase7 再生成（修正的生成）
    - フィードバックを基に修正
-   - → ③に戻ってループ
+   - → Phase3に戻ってループ
 ```
 
 ### 7フェーズの適用領域
@@ -174,9 +174,9 @@
 プロジェクト固有の修正可能性マップ
 
 **使用例：**
-- Public Knowledge（軸1）が 静的知識フェーズ（①）で不足している
-- Error Clarity（軸5）が 静的意味論検証フェーズ（③）で不明確
-- Runtime Continuity（軸6）が 実行時フィードバック（⑥）で不一致
+- Public Knowledge（Axis1）が 静的知識フェーズ（Phase1）で不足している
+- Error Clarity（Axis5）が 静的意味論検証フェーズ（Phase3）で不明確
+- Runtime Continuity（Axis6）が 実行時フィードバック（Phase6）で不一致
 
 ### B. 4層 × 9軸（研究向け）
 
@@ -187,9 +187,9 @@
 言語エコシステムの構造的理解
 
 **使用例：**
-- Community Layerの揺らぎ → Public Knowledge（軸1）の低下
-- Service Layerの不備 → Error Clarity（軸5）の低下
-- Dependency Layerの不安定性 → Dependency Management（軸7）の低下
+- Community Layerの揺らぎ → Public Knowledge（Axis1）の低下
+- Service Layerの不備 → Error Clarity（Axis5）の低下
+- Dependency Layerの不安定性 → Dependency Management（Axis7）の低下
 
 ### C. 4層 × 7フェーズ（AIエージェント設計向け）
 
@@ -200,9 +200,9 @@
 AIエージェントの情報取得戦略
 
 **使用例：**
-- 静的知識フェーズ（①） → Community Layer
-- 静的意味論検証フェーズ（③） → Core + Service Layer
-- 起動チェックフェーズ（④） → Dependency Layer
+- 静的知識フェーズ（Phase1） → Community Layer
+- 静的意味論検証フェーズ（Phase3） → Core + Service Layer
+- 起動チェックフェーズ（Phase4） → Dependency Layer
 
 ### D. 4層 × 9軸 × 7フェーズ（高度な分析）
 

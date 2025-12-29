@@ -230,24 +230,58 @@ This framework respects that diversity while helping AI navigate it effectively.
 ### **4 Layers × 9 Axes × Verification Loop**
 
 #### **4 Semantic Layers**
-1. **Core Layer** - Type system, scope rules, memory model
-2. **Service Layer** - AST, LSP, static analysis APIs
-3. **Dependency Layer** - Package management, standard library
-4. **Community Layer** - OSS, Q&A, best practices
+1. **Layer1 Core Layer** - Type system, scope rules, memory model
+2. **Layer2 Service Layer** - AST, LSP, static analysis APIs
+3. **Layer3 Dependency Layer** - Package management, standard library
+4. **Layer4 Community Layer** - OSS, Q&A, best practices
 
 #### **9 Evaluation Axes**
-1. Public Knowledge Availability
-2. Static Semantic Consistency
-3. Semantic Metadata Richness
-4. Semantic Access & Automation
-5. Runtime Semantic Continuity
-6. Dependency Stability
-7. Runtime Specification Conformance
-8. Compatibility Culture
-9. Semantic Extensibility
+1. **Axis1 Public Knowledge Availability** - Quality and quantity as training data
+2. **Axis2 Static Semantic Consistency** - Consistency of types, AST, scopes
+3. **Axis3 Semantic Metadata Richness** - Type annotations, LSP, contracts
+4. **Axis4 Semantic Access & Automation** - Roslyn, tsserver, Symbol API
+5. **Axis5 Runtime Semantic Continuity** - Consistency between implementation and runtime
+6. **Axis6 Dependency Stability** - Version management, ABI compatibility
+7. **Axis7 Runtime Specification Conformance** - API specs, RFC compliance
+8. **Axis8 Compatibility Culture** - Backward compatibility, LTS
+9. **Axis9 Semantic Extensibility** - Interfaces, plugins, modules
 
-#### **Verification Loop**
-7-phase process from generation to regeneration, centered on semantic verification.
+#### **7-Phase Verification Loop**
+1. **Phase1 Static Knowledge** - AI training data, language specs, common patterns
+2. **Phase2 Generation** - Initial code generation by AI
+3. **Phase3 Static Semantic Verification** - Type checking, syntax validation, linter
+4. **Phase4 Startup Check** - Build, dependency resolution, startup confirmation
+5. **Phase5 Test Execution** - Unit tests, integration tests
+6. **Phase6 Test Feedback** - Test results, error messages, traces
+7. **Phase7 Regeneration** - Fix based on feedback and loop back to Phase3
+
+```mermaid
+flowchart TD
+
+    A[Phase1 Static Knowledge]
+    B[Phase2 Generation]
+    C[Phase3 Static Semantic Validation]
+    D[Phase4 Startup Check]
+    E[Phase5 Test Execution]
+    F[Phase6 Test Feedback]
+    G[Phase7 Regeneration]
+
+    A --> B
+    B --> C
+
+    C -->|Failed| G
+    C -->|Passed| D
+
+    D -->|Failed| G
+    D -->|Passed| E
+
+    E --> F
+
+    F -->|Success| H[End]
+    F -->|Failed| G
+
+    G --> C
+```
 
 ---
 

@@ -136,23 +136,23 @@ that AI faces during actual coding.
 The 9 axes are not independent; the following interactions exist:
 
 ### **Stability vs Evolution**
-- ⑧ Compatibility Culture ⇔ ② Static Semantic Improvement
+- Axis8 Compatibility Culture ⇔ Axis2 Static Semantic Improvement
 - Prioritizing backward compatibility may delay semantic refinement
 
 ### **Strictness vs Flexibility**
-- ③ Metadata Richness ⇔ ⑨ Semantic Extensibility
+- Axis3 Metadata Richness ⇔ Axis9 Semantic Extensibility
 - Strict type systems can constrain extensibility
 
 ### **Information vs Complexity**
-- ④ Accessibility & Automation ⇔ Learning Cost
+- Axis4 Accessibility & Automation ⇔ Learning Cost
 - Rich APIs can become barriers for beginners
 
 ### **Importance Reversal Between AI and Humans**
 
 Notably, AI and humans have **completely opposite vulnerabilities in terms of which layers** matter most (see Section 5.3 for details).
 
-- **For AI:** Collapse of the Community layer (④) is critical; Core layer (①) has relatively minor impact
-- **For Humans:** Collapse of the Core layer (①) is critical; Community layer (④) has relatively minor impact
+- **For AI:** Collapse of the Community layer (Layer4) is critical; Core layer (Layer1) has relatively minor impact
+- **For Humans:** Collapse of the Core layer (Layer1) is critical; Community layer (Layer4) has relatively minor impact
 
 Therefore, "good languages for AI" and "good languages for humans" do not necessarily align.
 Since optimal solutions for these trade-offs vary by use case,  
@@ -166,33 +166,33 @@ The process by which AI generates, semantically verifies, corrects, and regenera
 can be structured into the following 7 phases:
 
 ```
-① Static Knowledge (Prior Knowledge)
-② Generation (Initial Generation)
+Phase1 Static Knowledge (Prior Knowledge)
+Phase2 Generation (Initial Generation)
    ├ External Reference
    └ Environment Semantics
-③ Static Semantic Verification
-④ Launch Check
-⑤ Test Execution
-   ├ ⑤-1 Quality Validation (Application/Specification Dependent)
-   ├ ⑤-2 Runtime Profiling Observation
-   └ ⑤-3 Runtime Profiling Semantics
-⑥ Test Feedback (Runtime Feedback)
-⑦ Regeneration (Corrective Generation)
+Phase3 Static Semantic Verification
+Phase4 Launch Check
+Phase5 Test Execution
+   ├ Phase5-1 Quality Validation (Application/Specification Dependent)
+   ├ Phase5-2 Runtime Profiling Observation
+   └ Phase5-3 Runtime Profiling Semantics
+Phase6 Test Feedback (Runtime Feedback)
+Phase7 Regeneration (Corrective Generation)
    ├ External Reference
    └ Environment Semantics
-→ Return to ③
+→ Return to Phase3
 ```
 
 ```mermaid
 flowchart TD
 
-    A[① Static Knowledge]
-    B[② Generation]
-    C[③ Static Semantic Validation]
-    D[④ Startup Check]
-    E[⑤ Test Execution]
-    F[⑥ Test Feedback]
-    G[⑦ Regeneration]
+    A[Phase1 Static Knowledge]
+    B[Phase2 Generation]
+    C[Phase3 Static Semantic Validation]
+    D[Phase4 Startup Check]
+    E[Phase5 Test Execution]
+    F[Phase6 Test Feedback]
+    G[Phase7 Regeneration]
 
     A --> B
     B --> C
@@ -220,58 +220,69 @@ Detailed descriptions of each phase follow.
 
 ---
 
-## ## 2.1 ① Static Knowledge (Prior Knowledge)
+## ## 2.1 Phase1 Static Knowledge (Prior Knowledge)
 
 - AI's training data (OSS, Q&A, official docs, blogs, etc.)
 - Language specifications, standard libraries
 - Common coding patterns
 
-## ## 2.2 ② Generation (Initial Generation)
+## ## 2.2 Phase2 Generation (Initial Generation)
 
 - Initial code generation by AI
 - From prompts and context
 
-## ## 2.3 ③ Static Semantic Verification (Code Semantic Verification)
+## ## 2.3 Phase3 Static Semantic Verification (Code Semantic Verification)
 
 - Type checking
 - Syntax validation
 - Linter-based verification
-- Build/Compilation (※Cannot reach ④ if compilation fails)
-- → If failed, go to ⑦
+- Build/Compilation (※Cannot reach Phase4 if compilation fails)
+- → If failed, go to Phase7
 
 ※Here we verify "code semantics (types, syntax, static analysis)".
-Syntactic dependency resolution occurs here, but actual executability is verified in ④.
+Syntactic dependency resolution occurs here, but actual executability is verified in Phase4.
 
-## ## 2.4 ④ Launch Check (Environment & Dependency Verification)
+## ## 2.4 Phase4 Launch Check (Environment & Dependency Verification)
 
 - Actual dependency resolution and loading
 - Environment variables and configuration file verification
 - Basic startup confirmation
-- → If failed, go to ⑦
+- → If failed, go to Phase7
    
 ※Here we verify "execution environment semantics (dependency existence, environment, initialization)".
 Handles cases where compilation succeeds but startup fails due to missing dependencies, unconfigured environment, etc.
 
-## ## 2.5 ⑤ Test Execution
+## ## 2.5 Phase5 Test Execution (Runtime Semantic Verification)
 
-- Unit tests
-- Integration tests
-- Specification validation (application-dependent)
-   
-## ## 2.6 ⑥ Test Feedback (Runtime Feedback)
+- **Phase5-1: Quality validation** (depends on app/spec)
+  - Unit tests
+  - Integration tests
+  - Code review
 
-- Test results
-  - → If successful, loop terminates
+- **Phase5-2: Runtime profiling observation**
+  - Execution performance
+  - Resource usage
+  - Logging
+
+- **Phase5-3: Runtime profiling semantics**
+  - Semantic interpretation based on observation results
+  - Detection of anomalies or unexpected behaviors
+  - Patterns from execution traces
+
+- → If failed, go to Phase7
+
+## ## 2.6 Phase6 Test Feedback (Runtime Feedback)
+
 - Error messages
-- Stack traces
-- Performance information
-  - Observed data is `fact`
-  - Needs `semantic interpretation`
-   
-## ## 2.7 ⑦ Regeneration (Corrective Generation)
+- Test results
+- Runtime logs
+- Performance bottlenecks
 
-- Corrections based on feedback
-- → Return to ③ and loop
+## ## 2.7 Phase7 Regeneration (Corrective Generation)
+
+- AI regenerates code based on feedback
+- Reflect Phase3, Phase4, Phase5, or Phase6 feedback to improve code
+- → Return to Phase3 validation loop
 
 ---
 
@@ -284,86 +295,97 @@ Handles cases where compilation succeeds but startup fails due to missing depend
 The 9 axes for evaluating language ecosystems are organized  
 along two dimensions: **Implementation (Static)** and **Runtime**.
 
+```
+Axis1 Public Knowledge Availability（公開知識の可用性）
+Axis2 Static Semantic Consistency（静的意味論の一貫性）
+Axis3 Semantic Metadata Richness（意味論的メタデータの豊富さ）
+Axis4 Semantic Access & Automation（意味論アクセスと自動化）
+Axis5 Runtime Semantic Continuity（実行時意味論の一貫性）
+Axis6 Dependency Stability（依存関係安定性）
+Axis7 Runtime Specification Conformance（実行時仕様準拠）
+Axis8 Compatibility Culture（互換性文化）
+Axis9 Semantic Extensibility（意味論拡張性）
+```
 ---
 
-## ## 3.1 ① Public Knowledge Availability
+## ## 3.1 Axis1 Public Knowledge Availability
 
 | Dimension | Role | Examples | Contribution to Verification Loop |
 | - | - | - | - |
-| Static | Knowledge for AI pre-training | OSS, Q&A, Blogs | ① Static Knowledge, ② Generation |
-| Runtime | Knowledge referenced in correction loop | API Docs, Specifications | ⑦ Regeneration basis strengthening |
+| Static | Knowledge for AI pre-training | OSS, Q&A, Blogs | Phase1 Static Knowledge, Phase2 Generation |
+| Runtime | Knowledge referenced in correction loop | API Docs, Specifications | Phase7 Regeneration basis strengthening |
 
 ---
 
-## ## 3.2 ② Static Semantic Consistency
+## ## 3.2 Axis2 Static Semantic Consistency
 
 | Dimension | Role | Examples | Contribution |
 | - | - | - | - |
-| Static | Static semantic consistency | Types, AST, Scopes | ③ Static Semantic Verification |
-| Runtime | Runtime semantic consistency | Exceptions, Dynamic types | ⑤-3 Profiling Semantics, ⑤-1 Quality Validation |
+| Static | Static semantic consistency | Types, AST, Scopes | Phase3 Static Semantic Verification |
+| Runtime | Runtime semantic consistency | Exceptions, Dynamic types | Phase5-3 Profiling Semantics, Phase5-1 Quality Validation |
 
 ---
 
-## ## 3.3 ③ Semantic Metadata Richness
+## ## 3.3 Axis3 Semantic Metadata Richness
 
 | Dimension | Role | Examples | Contribution |
 | - | - | - | - |
-| Static | Materials for static analysis | Type annotations, LSP, Contracts | ③ Semantic Verification |
-| Runtime | Granularity of runtime observation | Profilers, Traces | ⑤-2 Profiling Observation |
+| Static | Materials for static analysis | Type annotations, LSP, Contracts | Phase3 Semantic Verification |
+| Runtime | Granularity of runtime observation | Profilers, Traces | Phase5-2 Profiling Observation |
 
 ---
 
-## ## 3.4 ④ Semantic Access & Automation
+## ## 3.4 Axis4 Semantic Access & Automation
 
 | Dimension | Role | Examples | Contribution |
 | - | - | - | - |
-| Static | Access to semantic APIs | Roslyn, tsserver, Symbol API | ③ Verification, ④ Launch Check |
-| Runtime | Automated execution environment | Test runners, Profilers | ⑤ Test Execution |
+| Static | Access to semantic APIs | Roslyn, tsserver, Symbol API | Phase3 Verification, Phase4 Launch Check |
+| Runtime | Automated execution environment | Test runners, Profilers | Phase5 Test Execution |
 
 ---
 
-## ## 3.5 ⑤ Runtime Semantic Continuity
+## ## 3.5 Axis5 Runtime Semantic Continuity
 
 | Dimension | Role | Examples | Contribution |
 | - | - | - | - |
-| Static | Consideration of runtime differences | Node/Bun, CPython/PyPy | ② Generation |
-| Runtime | Runtime semantic continuity | GC, JIT, Exception models | ⑤-3 Profiling Semantics |
+| Static | Consideration of runtime differences | Node/Bun, CPython/PyPy | Phase2 Generation |
+| Runtime | Runtime semantic continuity | GC, JIT, Exception models | Phase5-3 Profiling Semantics |
 
 ---
 
-## ## 3.6 ⑥ Dependency Stability
+## ## 3.6 Axis6 Dependency Stability
 
 | Dimension | Role | Examples | Contribution |
 | - | - | - | - |
-| Static | Dependency consistency | Versions, ABI | ③ Verification, ④ Launch Check |
-| Runtime | Runtime dependency behavior | Actual loading | ⑤-1 Quality Validation |
+| Static | Dependency consistency | Versions, ABI | Phase3 Verification, Phase4 Launch Check |
+| Runtime | Runtime dependency behavior | Actual loading | Phase5-1 Quality Validation |
 
 ---
 
-## ## 3.7 ⑦ Runtime Specification Conformance
+## ## 3.7 Axis7 Runtime Specification Conformance
 
 | Dimension | Role | Examples | Contribution |
 | - | - | - | - |
-| Static | Semantic fixation based on specs | API Docs, RFCs | ② Generation, ③ Verification |
-| Runtime | Runtime spec conformance | Behavior per specification | ⑤-1 Quality Validation |
+| Static | Semantic fixation based on specs | API Docs, RFCs | Phase2 Generation, Phase3 Verification |
+| Runtime | Runtime spec conformance | Behavior per specification | Phase5-1 Quality Validation |
 
 ---
 
-## ## 3.8 ⑧ Compatibility Culture
+## ## 3.8 Axis8 Compatibility Culture
 
 | Dimension | Role | Examples | Contribution |
 | - | - | - | - |
-| Static | Use of backward-compatible APIs | Deprecated API warnings | ② Generation, ③ Verification |
-| Runtime | Operation in legacy environments | LTS, Stable APIs | ④ Launch Check, ⑤-1 Quality Validation |
+| Static | Use of backward-compatible APIs | Deprecated API warnings | Phase2 Generation, Phase3 Verification |
+| Runtime | Operation in legacy environments | LTS, Stable APIs | Phase4 Launch Check, Phase5-1 Quality Validation |
 
 ---
 
-## ## 3.9 ⑨ Semantic Extensibility
+## ## 3.9 Axis9 Semantic Extensibility
 
 | Dimension | Role | Examples | Contribution |
 | - | - | - | - |
-| Static | Extensible design | Interfaces, Abstractions | ② Generation, ③ Verification |
-| Runtime | Post-extension behavior validation | Plugins, Modules | ⑤-1 Quality Validation, ⑦ Regeneration |
+| Static | Extensible design | Interfaces, Abstractions | Phase2 Generation, Phase3 Verification |
+| Runtime | Post-extension behavior validation | Plugins, Modules | Phase5-1 Quality Validation, Phase7 Regeneration |
 
 ---
 
@@ -371,12 +393,19 @@ along two dimensions: **Implementation (Static)** and **Runtime**.
 
 Language ecosystems can be structured into the following 4 layers:
 
+```
+Layer1：Semantic Core Layer（意味論コア層）
+Layer2：Semantic Service Layer（意味論サービス層）
+Layer3：Dependency Semantics Layer（依存関係意味論層）
+Layer4：Community Semantics Layer（コミュニティ意味論層）
+```
+
 - Layers 1-3 represent "official" semantics
 - Layer 4 represents "social" semantics
 
 ---
 
-## ## 4.1 Layer 1: Semantic Core Layer
+## ## 4.1 Layer1: Semantic Core Layer
 
 - Type system  
 - Scope rules  
@@ -384,8 +413,8 @@ Language ecosystems can be structured into the following 4 layers:
 - Evaluation strategy  
 - Backward compatibility policy  
 
-**Related Axes:** ②⑤⑧⑨  
-**Contributions:** ③④⑤⑦
+**Related Axes:** Axis2, Axis5, Axis8, Axis9  
+**Contributions:** Phase3, Phase4, Phase5, Phase7
 
 Represents the language specification itself, including types, scopes, memory models, etc.
 
@@ -405,8 +434,8 @@ Represents the language specification itself, including types, scopes, memory mo
 - Macros / Source Generators
 - Analyzer extension points
 
-**Related Axes:** ③④⑤⑦⑨  
-**Contributions:** ②③④⑤⑦
+**Related Axes:** Axis3, Axis4, Axis5, Axis7, Axis9  
+**Contributions:** Phase2, Phase3, Phase4, Phase5, Phase7
 
 This is the interface layer that exposes language specifications externally,
 allowing AI to acquire, interpret, and modify semantics.
@@ -429,8 +458,8 @@ It also includes services (toolchain) for verifying, analyzing, and manipulating
 - API lifetime (deprecation, breaking changes)  
 - Runtime compatibility (ABI, binary compatibility)  
 
-**Related Axes:** ⑥⑦⑧⑨  
-**Contributions:** ③④⑤⑦
+**Related Axes:** Axis6, Axis7, Axis8, Axis9  
+**Contributions:** Phase3, Phase4, Phase5, Phase7
 
 In language ecosystems, this layer represents the management, versioning, and compatibility of external libraries and modules that code depends on.
 While Layer 2 represents the "mechanisms for handling" these, Layer 3 represents the "semantics of dependencies themselves."
@@ -445,8 +474,8 @@ While Layer 2 represents the "mechanisms for handling" these, Layer 3 represents
 - Best practices  
 - Coding conventions  
 
-**Related Axes:** ①⑥⑧⑨  
-**Contributions:** ①②⑥⑦
+**Related Axes:** Axis1, Axis6, Axis8, Axis9  
+**Contributions:** Phase1, Phase2, Phase6, Phase7
 
 ---
 
