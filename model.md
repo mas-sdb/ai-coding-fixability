@@ -147,6 +147,14 @@ The 9 axes are not independent; the following interactions exist:
 - ④ Accessibility & Automation ⇔ Learning Cost
 - Rich APIs can become barriers for beginners
 
+### **Importance Reversal Between AI and Humans**
+
+Notably, AI and humans have **completely opposite vulnerabilities in terms of which layers** matter most (see Section 5.3 for details).
+
+- **For AI:** Collapse of the Community layer (④) is critical; Core layer (①) has relatively minor impact
+- **For Humans:** Collapse of the Core layer (①) is critical; Community layer (④) has relatively minor impact
+
+Therefore, "good languages for AI" and "good languages for humans" do not necessarily align.
 Since optimal solutions for these trade-offs vary by use case,  
 we adopt **qualitative evaluation rather than scoring**.
 
@@ -180,7 +188,66 @@ The purpose is singular:
 > **Enable AI to "fix" code.  
 > Provide all semantic information necessary for that purpose.**
 
-**Note on terminology:** Throughout this document, we use "correction loop" and "fix loop" interchangeably to refer to this iterative process of AI-driven code improvement.
+Detailed descriptions of each phase follow.
+
+---
+
+## ## 2.1 ① Static Knowledge (Prior Knowledge)
+
+- AI's training data (OSS, Q&A, official docs, blogs, etc.)
+- Language specifications, standard libraries
+- Common coding patterns
+
+## ## 2.2 ② Generation (Initial Generation)
+
+- Initial code generation by AI
+- From prompts and context
+
+## ## 2.3 ③ Static Semantic Verification (Code Semantic Verification)
+
+- Type checking
+- Syntax validation
+- Linter-based verification
+- Build/Compilation (※Cannot reach ④ if compilation fails)
+- → If failed, go to ⑦
+
+※Here we verify "code semantics (types, syntax, static analysis)".
+Syntactic dependency resolution occurs here, but actual executability is verified in ④.
+
+## ## 2.4 ④ Launch Check (Environment & Dependency Verification)
+
+- Actual dependency resolution and loading
+- Environment variables and configuration file verification
+- Basic startup confirmation
+- → If failed, go to ⑦
+   
+※Here we verify "execution environment semantics (dependency existence, environment, initialization)".
+Handles cases where compilation succeeds but startup fails due to missing dependencies, unconfigured environment, etc.
+
+## ## 2.5 ⑤ Test Execution
+
+- Unit tests
+- Integration tests
+- Specification validation (application-dependent)
+   
+## ## 2.6 ⑥ Test Feedback (Runtime Feedback)
+
+- Test results
+  - → If successful, loop terminates
+- Error messages
+- Stack traces
+- Performance information
+  - Observed data is `fact`
+  - Needs `semantic interpretation`
+   
+## ## 2.7 ⑦ Regeneration (Corrective Generation)
+
+- Corrections based on feedback
+- → Return to ③ and loop
+
+---
+
+**Note on terminology:** Throughout this document, we use "verification loop," "correction loop," and "fix loop" to refer to the iterative process of AI-driven code generation, verification, and improvement. These terms are used contextually but refer to essentially the same process.
 
 ---
 
@@ -289,8 +356,10 @@ Language ecosystems can be structured into the following 4 layers:
 - Evaluation strategy  
 - Backward compatibility policy  
 
-Related Axes: ②⑤⑧⑨  
-Contributions: ③④⑤⑦
+**Related Axes:** ②⑤⑧⑨  
+**Contributions:** ③④⑤⑦
+
+Represents the language specification itself, including types, scopes, memory models, etc.
 
 ---
 
@@ -301,21 +370,42 @@ Contributions: ③④⑤⑦
 - Diagnostics & Errors  
 - LSP  
 - Static analysis API  
+- Compiler
+- Toolchain
+- Custom attributes (Attribute / Annotation / Decorator)
+- Comments (natural language / semantic metadata like XML comments)
+- Macros / Source Generators
+- Analyzer extension points
 
-Related Axes: ③④⑤⑦⑨  
-Contributions: ②③④⑤⑦
+**Related Axes:** ③④⑤⑦⑨  
+**Contributions:** ②③④⑤⑦
+
+This is the interface layer that exposes language specifications externally,
+allowing AI to acquire, interpret, and modify semantics.
+
+### ## 4.2.1 Role of Layer 2
+
+Layer 2 functions as the "interface layer" that exposes language specifications (Layer 1) externally, enabling AI to acquire, interpret, and modify semantics. Services (mechanisms) for providing feedback from the language side to AI belong here.
+
+Layer 2 integrates static, dynamic, and dependency semantics, serving as "machine-readable semantics" for AI.
+
+It also includes services (toolchain) for verifying, analyzing, and manipulating dependencies. This is because Layer 2 represents "how to handle" dependencies, while Layer 3 represents the "content" of dependencies.
 
 ---
 
 ## ## 4.3 Layer 3: Dependency Semantics Layer
 
 - Standard library  
-- Package management  
-- API lifetime  
-- Runtime compatibility  
+- Package management systems (npm, pip, cargo, etc.)  
+- Version management and dependency resolution  
+- API lifetime (deprecation, breaking changes)  
+- Runtime compatibility (ABI, binary compatibility)  
 
-Related Axes: ⑥⑦⑧⑨  
-Contributions: ③④⑤⑦
+**Related Axes:** ⑥⑦⑧⑨  
+**Contributions:** ③④⑤⑦
+
+In language ecosystems, this layer represents the management, versioning, and compatibility of external libraries and modules that code depends on.
+While Layer 2 represents the "mechanisms for handling" these, Layer 3 represents the "semantics of dependencies themselves."
 
 ---
 
@@ -327,8 +417,8 @@ Contributions: ③④⑤⑦
 - Best practices  
 - Coding conventions  
 
-Related Axes: ①⑥⑧⑨  
-Contributions: ①②⑥⑦
+**Related Axes:** ①⑥⑧⑨  
+**Contributions:** ①②⑥⑦
 
 ---
 
