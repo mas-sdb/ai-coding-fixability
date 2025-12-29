@@ -10,6 +10,8 @@ This framework provides a novel approach to evaluating programming language ecos
 **Key Insight:**  
 In AI-assisted development, language strength is determined not by initial code generation quality, but by the ecosystem's capacity to provide semantic transparency for iterative correction.
 
+**🚀 Want to diagnose your project now? →** [Quick Start Guide](#-quick-start-diagnose-your-project)
+
 ---
 
 ## 📌 Project Status
@@ -42,18 +44,62 @@ This framework's structural approach can be adapted to identify mis-inference pa
 
 ---
 
+## � Quick Start: Diagnose Your Project
+
+If you want to diagnose situations where AI mis-infers during code generation in your actual project, use these two documents:
+
+### **📋 Use the Diagnostic Prompt**
+
+[diagnostic_prompt.md](./diagnostic_prompt.md) can be used with any AI model to diagnose your project's language ecosystem.
+
+**How to use:**
+1. Copy the prompt
+2. Add your project context (language, version, major frameworks, etc.)
+3. Run it through an AI model
+4. Review the 9-axis diagnostic results
+
+**Use the results to:**
+- Identify points where AI is likely to stumble
+- Understand structural vulnerabilities to watch for during code generation
+- Inform your AGENT.md or prompt design
+
+### **📊 Reference Diagnostic Samples**
+
+[samples/](./samples/) contains examples of diagnostic results for actual language configurations.
+
+**Available samples:**
+- C# + .NET
+- Java + Spring Boot
+- Python + Django/FastAPI
+
+Referencing samples similar to your project configuration helps you understand what diagnostic results look like.
+
+**💡 Tip:** For theoretical background, see the "📚 Documentation" section below.
+
+---
+
 ## 📚 Documentation
 
 ### **Framework Documents**
 
-This repository contains three interconnected document types:
+This repository contains five interconnected document types:
 
 #### **1. Theoretical Framework ([model.md](./model.md))**
 - **Purpose:** Theoretical foundation with 4-layer architecture and 9-axis evaluation
 - **Structure:** 4 Semantic Layers × 9 Evaluation Axes × Verification Loop
 - **Audience:** Researchers, framework designers, those seeking deep understanding
 
-#### **2. Diagnostic Tool ([diagnostic_prompt.md](./diagnostic_prompt.md))**
+#### **2. Usage Guide ([model-usage-guide.md](./model-usage-guide.md))**
+- **Purpose:** Explains how to use and customize the framework
+- **Structure:** How to use the 3 perspectives (4 Layers, 9 Axes, 7 Phases) and convert to project-specific evaluation axes
+- **Audience:** Framework users, those considering customization
+- **Key Content:**
+  - Independence and usage of the model's three perspectives
+  - Recommended usage by user type
+  - Conversion process to project-specific evaluation axes (7 steps)
+  - Customization principles
+
+#### **3. Diagnostic Tool ([diagnostic_prompt.md](./diagnostic_prompt.md))**
 - **Purpose:** Practical diagnostic tool that transforms the 4-layer model into 9 diagnostic axes
 - **Structure:** 9 diagnostic axes for identifying AI mis-inference points
 - **Audience:** AI coding assistant users, project teams, developers writing AGENT.md
@@ -64,18 +110,35 @@ This repository contains three interconnected document types:
   - 📊 **Diagnostic quality depends** on the AI model's training data and capabilities
   - 🔄 **Results may vary** between different AI models or versions
 
-#### **3. Diagnostic Results ([samples/](./samples/))**
+#### **4. Diagnostic Results ([samples/](./samples/))**
 - **Purpose:** Real-world examples of applying the diagnostic prompt to specific language configurations
 - **Structure:** Language + version + context → 9-axis diagnostic results
 - **Audience:** Users seeking concrete examples, teams evaluating their tech stack
 
+#### **5. Thought Process ([model-thought-process.md](./model-thought-process.md))**
+- **Purpose:** Chronicles the development journey behind this framework
+- **Structure:** A narrative essay tracing the evolution from initial questions to the final 9-axis model
+- **Audience:** Those interested in the reasoning process, framework designers, researchers
+- **Note:** Written in an accessible essay style rather than technical documentation
+- **Highlights:**
+  - The paradigm shift from "generation quality" to "fixability"
+  - The TCP/IP analogy for understanding correction loops
+  - Discovery of the dual perspective (human vs. AI)
+  - Recognition that syntax is UI for AI
+
 **Relationship:**
 ```
 Theoretical Model (model.md)
+  ↓ Explains usage and customization
+Usage Guide (model-usage-guide.md)
   ↓ Practical transformation
 Diagnostic Prompt (diagnostic_prompt.md)
   ↓ Applied to real projects
 Diagnostic Samples (samples/)
+
+Thought Process (model-thought-process.md)
+  ↓ Explains the reasoning behind
+Theoretical Model (model.md)
 ```
 
 ### **Language Versions**

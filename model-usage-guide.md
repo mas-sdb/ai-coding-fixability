@@ -33,6 +33,7 @@ This model consists of two documents:
 
 **Related Documents:**
 - [Design Philosophy](./philosophy.md) - Principles for long-term framework stability
+- [Thought Process](./model-thought-process.md) - Development journey and reasoning behind this framework
 
 **Purpose of This Guide:**
 - Explain the independence of the model's three perspectives (4 Layers, 9 Axes, 7 Phases)
