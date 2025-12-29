@@ -81,7 +81,7 @@ Even after transitioning from business system developer to technical consultant,
 - Real constraints of enterprise organizations
 - Long-term technology strategy planning
 
-**From an implementer's perspective:**
+**From an developer's perspective:**
 - Daily experience with AI coding tools and the correction loop
 - Feeling the gap between theory and reality
 - Keeping up with the evolution of languages and libraries
