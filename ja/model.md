@@ -169,6 +169,34 @@ AI がコードを生成し、意味論的に検証し、修正し、再生成�
 → ③ に戻る
 ```
 
+```mermaid
+flowchart TD
+
+    A[① Static Knowledge]
+    B[② Generation]
+    C[③ Static Semantic Validation]
+    D[④ Startup Check]
+    E[⑤ Test Execution]
+    F[⑥ Test Feedback]
+    G[⑦ Regeneration]
+
+    A --> B
+    B --> C
+
+    C -->|Failed| G
+    C -->|Passed| D
+
+    D -->|Failed| G
+    D -->|Passed| E
+
+    E --> F
+
+    F -->|Success| H[End]
+    F -->|Failed| G
+
+    G --> C
+```
+
 このループの目的は単一である。すなわち、AI がコードを「修正」できるようにし、そのために必要なすべての意味論情報を提供することである。
 
 以下、各フェーズの詳細を述べる。
