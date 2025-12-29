@@ -1,6 +1,6 @@
 # Evaluating Language Ecosystems in the AI Era - A Journey of Thought
 
-## Introduction
+# # Introduction
 
 This document chronicles the thought process behind developing an "Evaluation Model for Language Ecosystems in the AI Era."
 It's written for those who already have some familiarity with the topic, hoping it might serve as a reference for anyone thinking through similar challenges.
@@ -15,7 +15,7 @@ It's written for those who already have some familiarity with the topic, hoping 
 - The analysis is based on circumstances as of late December 2025
 - The content may become outdated as technology evolves
 
-### My Background and Perspective
+## ## My Background and Perspective
 
 **The Evolution of My Relationship with Programming**
 
@@ -93,20 +93,20 @@ Even after transitioning from business system developer to technical consultant,
 
 ---
 
-## 0. The Beginning of a Thought Experiment: "Do We Need Languages Optimized for AI?"
+# # 0. The Beginning of a Thought Experiment: "Do We Need Languages Optimized for AI?"
 
-### The Initial Question
+## ## The Initial Question
 > How should programming languages evolve in the age of AI coding?  
 > Should we create new languages specifically for AI?
 > Let me formulate my own answer as of late December 2025.
 
-### Background
+## ## Background
 - The age of AI-generated code has arrived
 - Existing languages were designed for humans
 - What would a language that's "easy to write" and "easy to read" for AI look like?
 - Should AI generation ease take priority over human readability?
 
-### Initial Hypotheses
+## ## Initial Hypotheses
 - Do we need AI-specific concise syntax?
   - **Optimal for AI likely varies by model**, doesn't it?
   - Different vendors have different preferences, so it's unlikely to become an industry standard
@@ -126,7 +126,7 @@ Even after transitioning from business system developer to technical consultant,
   - Impossible for my generation, but perhaps when the first generation grows up with it as normal?
   - Based on my experience observing the Internet, smartphones, and cloud evolution
 
-### A Pragmatic Direction: "Making Existing Languages AI-Friendly"
+## ## A Pragmatic Direction: "Making Existing Languages AI-Friendly"
 
 **What does "evolving existing languages for AI" mean? For example:**
 - More expressive type systems
@@ -146,7 +146,7 @@ This enables:
 - Aggregating community-wide knowledge
 - Maintaining compatibility across AI tools
 
-### My Personal Conclusion as of Late December 2025
+## ## My Personal Conclusion as of Late December 2025
 
 > AI-optimized languages might succeed in the future.
 > However, at present, the likelihood of new AI-optimized general-purpose languages gaining acceptance is low.
@@ -156,9 +156,9 @@ I believe this direction is more practically acceptable and realistic.
 
 ---
 
-## 1. The Next Thought Experiment: "So How Well-Suited Are Current Languages for AI?"
+# # 1. The Next Thought Experiment: "So How Well-Suited Are Current Languages for AI?"
 
-### From One Question to Another
+## ## From One Question to Another
 
 The previous conclusion sparked a new question:
 
@@ -188,23 +188,23 @@ The previous conclusion sparked a new question:
 
 ---
 
-## 2. The First Realization: "The Problem Isn't Generation—It's Correction"
+# # 2. The First Realization: "The Problem Isn't Generation—It's Correction"
 
-### Observation: Coding with AI
+## ## Observation: Coding with AI
 - AI-generated code appears to work at first glance
 - But it breaks with minor changes
 - Passing error messages back to AI leads to the same errors repeating
 - "Ease of correction" varies by language
 - Adding comments as supplementary explanations in source code sometimes improves accuracy
 
-### A Paradigm Shift
+## ## A Paradigm Shift
 > **The question of "AI code generation quality" was looking at it from the wrong angle**
 > 
 > What matters is:
 > Not whether AI can write correct code on the first try (initial generation quality),
 > But whether AI can correctly fix mistakes (fixability)
 
-### The Fundamental Structure of AI Coding
+## ## The Fundamental Structure of AI Coding
 
 **An intuitive realization:**
 
@@ -228,7 +228,7 @@ Without concrete evidence yet, but in a vague state, I thought the essence of AI
 3. That information must be provided in a **format AI can understand**
 4. AI must be able to **use that information to make corrections**
 
-### What This Structure Means
+## ## What This Structure Means
 
 **A "good language ecosystem" for AI is:**
 
@@ -245,7 +245,7 @@ Without concrete evidence yet, but in a vague state, I thought the essence of AI
 - **Compiler diagnostics** — Provide hints on how to fix
 - **Implementation-runtime consistency** - Inconsistency confuses AI
 
-### Similarity to Maintainability
+## ## Similarity to Maintainability
 
 This structure mirrors **maintainability**:
 
@@ -260,7 +260,7 @@ This structure mirrors **maintainability**:
 - AI corrects as an "other" → **Semantic information clarity matters**
 - Recovery from errors → **Accurate feedback matters**
 
-### Clarifying the Direction of Thought
+## ## Clarifying the Direction of Thought
 
 - The correction loop repeats from initial generation through validation until all mistakes are fixed
 - Mistakes happen not just at implementation time, but also at runtime
@@ -272,16 +272,16 @@ This structure mirrors **maintainability**:
 
 ---
 
-## Aside: I Don't Consider "Same Input ⇒ Same Output" a Requirement
+# # Aside: I Don't Consider "Same Input ⇒ Same Output" a Requirement
 
-### A Common Debate
+## ## A Common Debate
 
 When discussing AI coding, debates often arise about
 "whether identical input should produce identical output."
 
 Personally, I don't think this point is that important.
 
-### Why I Think This
+## ## Why I Think This
 
 The reason is simple: **human programmers also write different implementations for the same specifications.**
 
@@ -297,7 +297,7 @@ Yet:
 
 **Naturally differ by developer.**
 
-### What Actually Matters
+## ## What Actually Matters
 
 What matters is:
 - Does it meet specifications?
@@ -306,7 +306,7 @@ What matters is:
 
 Not whether "the written code is identical every time."
 
-### As Long as AI Outputs in General-Purpose Languages
+## ## As Long as AI Outputs in General-Purpose Languages
 
 As long as AI outputs code in general-purpose languages readable by humans,
 even with some variation in generation results:
@@ -320,7 +320,7 @@ As long as this premise holds,
 the non-deterministic nature of AI's generation process
 shouldn't be a significant practical problem.
 
-### The Importance of Layer Separation
+## ## The Importance of Layer Separation
 
 However, **the process of converting generated source code into executables** must be deterministic.
 
@@ -331,7 +331,7 @@ However, **the process of converting generated source code into executables** mu
 
 remain viable.
 
-### Summary
+## ## Summary
 
 In other words, what matters is:
 
@@ -341,7 +341,7 @@ In other words, what matters is:
 
 This perspective leads to emphasizing "implementation-time" and "runtime" consistency in the evaluation model construction that follows.
 
-### Yet, a New Question
+## ## Yet, a New Question
 
 This consideration raised a new question:
 
@@ -369,9 +369,9 @@ This leads to thinking about modeling—what structure supports this correction 
 
 ---
 
-## 3. The Structure Supporting the Correction Loop
+# # 3. The Structure Supporting the Correction Loop
 
-### Can We Build Stable Systems on Unstable Foundations?
+## ## Can We Build Stable Systems on Unstable Foundations?
 
 After realizing "convergence of the correction loop" in the previous section,
 a fundamental question remained:
@@ -380,7 +380,7 @@ a fundamental question remained:
 
 This seems contradictory.
 
-### Applying TCP/IP Concepts
+## ## Applying TCP/IP Concepts
 
 Intuitively, I thought of **applying TCP/IP concepts**.
 
@@ -426,7 +426,7 @@ Error correction   → Guarantees reliability
 - With **error detection and feedback mechanisms**
 - Upper layers (applications) can provide stability
 
-### Analogy to AI Coding
+## ## Analogy to AI Coding
 
 Applying this structure to AI coding:
 
@@ -448,7 +448,7 @@ Meeting specifications      → Reliability
 Explainability              → Auditability
 ```
 
-### What This Analogy Means
+## ## What This Analogy Means
 
 **Conditions for TCP/IP to function:**
 1. Can detect packet arrival/non-arrival
@@ -462,7 +462,7 @@ Explainability              → Auditability
 3. **Can guarantee consistency** → Implementation-runtime alignment
 4. **Can confirm convergence** → Specification verification through tests
 
-### The Evaluation Perspective Emerges
+## ## The Evaluation Perspective Emerges
 
 In other words, what's required of language ecosystems:
 
@@ -476,7 +476,7 @@ In other words, what's required of language ecosystems:
 - Runtime observability
 - Specification clarification through tests
 
-### The First Major Realization
+## ## The First Major Realization
 
 **This was the first major realization in building this framework.**
 
@@ -488,7 +488,7 @@ Through the TCP/IP analogy, vague intuitions became clear structures:
 
 This insight guided the entire process of discovering evaluation criteria that followed.
 
-### The Next Question: Layering Language Ecosystems
+## ## The Next Question: Layering Language Ecosystems
 
 After seeing this structure, the next consideration was **layering language ecosystems**.
 
@@ -510,12 +510,12 @@ I thought layering the language side would help grasp the full picture of inform
 
 ---
 
-## 4. The Structure of the Correction Loop
+# # 4. The Structure of the Correction Loop
 
 I detailed the structure where AI generates code and runs validation loops.
 Clarifying under what conditions regeneration occurs at each stage of the correction loop.
 
-### Seven Phases of the Validation Loop
+## ## Seven Phases of the Validation Loop
 
 **Phases that emerged from observation:**
 
@@ -565,9 +565,9 @@ I thought this information targets not just language specifications, but the ent
 
 ---
 
-## 5. The Full Picture of Language Ecosystems
+# # 5. The Full Picture of Language Ecosystems
 
-### Reorganizing Information Sources
+## ## Reorganizing Information Sources
 
 Analyzing the seven phases of the validation loop, organizing information sources:
 
@@ -591,7 +591,7 @@ Analyzing the seven phases of the validation loop, organizing information source
 - Test frameworks → External tools
 - Observability → Profilers, debuggers
 
-### Discovery of Layering
+## ## Discovery of Layering
 
 Surveying these reveals **four layers**:
 
@@ -618,7 +618,7 @@ Surveying these reveals **four layers**:
 - Best practices
 - Community culture
 
-### Scope of "Language" from AI's Perspective
+## ## Scope of "Language" from AI's Perspective
 
 **Conventional definition of "language":**
 - Refers to Core + Service domain
@@ -634,7 +634,7 @@ Surveying these reveals **four layers**:
 - Community practices shape AI's understanding
 - In other words, for AI, "language" = entire ecosystem
 
-### Organizing Inter-Layer Dependencies
+## ## Organizing Inter-Layer Dependencies
 
 This realization raised the next question:
 
@@ -644,7 +644,7 @@ To consider this, I thought to organize inter-layer dependencies.
 
 ---
 
-## 6. Dual Perspective: AI View / Human View
+# # 6. Dual Perspective: AI View / Human View
 
 At that moment, intuitively, the **concentric circles of Clean Architecture** came to mind.
 Though displayed as text here, I tried mapping each layer onto concentric circles.
@@ -669,7 +669,7 @@ Though displayed as text here, I tried mapping each layer onto concentric circle
 - Domain (Core) → Application (Service) → Infrastructure (Dependency)
 - Community is reference information
 
-### A Surprising Discovery: AI's Center is Reversed
+## ## A Surprising Discovery: AI's Center is Reversed
 
 But reconsidering from AI's perspective revealed a different structure...
 
@@ -692,7 +692,7 @@ In other words:
        └─────────────┘
 ```
 
-### Key Realization: Humans and AI Perceive Languages in Opposite Directions
+## ## Key Realization: Humans and AI Perceive Languages in Opposite Directions
 
 **Human developers:**
 - Core (language specs) at center
@@ -720,9 +720,9 @@ This insight provides the rationale for positioning Community Layer as the first
 
 ---
 
-## 7. Strategy Pattern and Language Differences
+# # 7. Strategy Pattern and Language Differences
 
-### How to Understand Language-Specific Differences
+## ## How to Understand Language-Specific Differences
 
 After seeing the four-layer structure, the next question arose:
 
@@ -733,7 +733,7 @@ After seeing the four-layer structure, the next question arose:
 - But each has different characteristics
 - Can we compare them from a unified perspective?
 
-### The Strategy Pattern Image
+## ## The Strategy Pattern Image
 
 Here, intuitively, the **Strategy pattern** image emerged.
 
@@ -742,7 +742,7 @@ Here, intuitively, the **Strategy pattern** image emerged.
 - Strategy (implementation) differs
 - Can explain **concepts including not just language specification differences, but values and culture**
 
-### Yet, a New Question
+## ## Yet, a New Question
 
 Just as I was satisfied with this organization, a fundamental question emerged:
 
@@ -753,7 +753,7 @@ Just as I was satisfied with this organization, a fundamental question emerged:
 - Dynamic languages (Python) → Runtime type checking
 - Can this be called "the same interface"?
 
-### Seeking a Unified Perspective
+## ## Seeking a Unified Perspective
 
 > **Can we find a structure that unifies discussion of static and dynamic languages?**
 
@@ -768,7 +768,7 @@ Source Code → (No Compilation) → Execution
 
 In this structure, unified discussion is indeed challenging...
 
-### Key Realization: What is the Essence of Compilation?
+## ## Key Realization: What is the Essence of Compilation?
 
 Here, I reconsidered from AI's perspective:
 
@@ -781,7 +781,7 @@ Here, I reconsidered from AI's perspective:
 - Compiler = **Semantic validation engine**
 - Executable = Merely an "artifact" upon successful validation
 
-### Paradigm Shift: Redefining the Value of Compilation
+## ## Paradigm Shift: Redefining the Value of Compilation
 
 For running correction loops, **what matters to AI:**
 Not that executables are generated, but that **semantic errors are detected**.
@@ -803,7 +803,7 @@ Source Code → Semantic Validation → Feedback
         (Artifact on success)
 ```
 
-### What This Unified Perspective Means
+## ## What This Unified Perspective Means
 
 **Static languages:**
 - Semantic validation = Compile-time type checking
@@ -820,7 +820,7 @@ Source Code → Semantic Validation → Feedback
 >
 > But their **strategy (timing)** differs
 
-### Implications for the Evaluation Model
+## ## Implications for the Evaluation Model
 
 This discovery enables:
 
@@ -840,9 +840,9 @@ This insight established a foundation for thinking about languages in a generali
 
 ---
 
-## 8. Port & Adapters: Syntax is the UI
+# # 8. Port & Adapters: Syntax is the UI
 
-### How to Implement Strategy Switching
+## ## How to Implement Strategy Switching
 
 In Section 7, we gained a perspective to handle static and dynamic languages uniformly.
 But a new question arose:
@@ -854,7 +854,7 @@ But a new question arose:
 - How does it process internally?
 - How does it absorb language differences?
 
-### The Port & Adapters Concept
+## ## The Port & Adapters Concept
 
 Here, the **Port & Adapters (Hexagonal Architecture)** concept
 seemed to fit better.
@@ -864,13 +864,13 @@ seemed to fit better.
 - **Adapters (DB and UI)** are interchangeable
 - Loosely coupled via Ports
 
-### Reversal from AI's Perspective
+## ## Reversal from AI's Perspective
 
 AI perceives language ecosystem layers in the opposite direction from humans.
 At that point, the outermost layer corresponds to language specifications, specifically `language syntax`.
 In other words, I realized that **the syntax of the generated language is the user interface (UI) between AI and human users**.
 
-### What This Perspective Means
+## ## What This Perspective Means
 
 Humans grasp the `meaning` of "conditional branching" from the `syntax` "if".
 
@@ -893,7 +893,7 @@ Repetition → "for"
 **Key insight:**
 > **For AI, syntax is merely an interchangeable "display format"**
 
-### Syntax as Adapter
+## ## Syntax as Adapter
 
 Organizing from the Port & Adapters perspective, **the semantic layer is the true essence**
 This discovery led to an important conclusion:
@@ -907,7 +907,7 @@ This discovery led to an important conclusion:
 2. Convert to target language syntax
 3. Validate at Service layer (compiler, etc.)
 
-### Implications for Evaluation
+## ## Implications for Evaluation
 
 This insight enables:
 
@@ -930,7 +930,7 @@ This insight enables:
 - Runtime Continuity → Semantic consistency
 - Error Clarity → Semantic error messages
 
-### Returning to the Initial Question
+## ## Returning to the Initial Question
 
 This discovery brought a new perspective to the initial question:
 
@@ -958,9 +958,9 @@ this framework focuses on evaluating existing languages.
 
 ---
 
-## 9. Concretizing Evaluation Criteria: Mapping Validation Loop to Layers
+# # 9. Concretizing Evaluation Criteria: Mapping Validation Loop to Layers
 
-### From Inspiration to Systematization
+## ## From Inspiration to Systematization
 
 Insights so far:
 - Convergence of correction loops is essential (Sections 2-3)
@@ -977,7 +977,7 @@ At this point, **the model's complete form became visible.**
 
 Beyond this, no particular insights—just **systematic organization work**.
 
-### Working Approach
+## ## Working Approach
 
 **Specifically:**
 1. Reconfirm each phase of the validation loop
@@ -991,7 +991,7 @@ Beyond this, no particular insights—just **systematic organization work**.
 - Check for overlaps and gaps
 - Group and consolidate into evaluation criteria
 
-### Validation Loop and Layer Correspondence
+## ## Validation Loop and Layer Correspondence
 
 **① Static Knowledge Phase:**
 ```
@@ -1029,7 +1029,7 @@ Evaluation criterion candidates:
   - Runtime Semantics
 ```
 
-### Consolidation into 9 Criteria
+## ## Consolidation into 9 Criteria
 
 From this organization, **9 evaluation criteria** emerged:
 
@@ -1050,7 +1050,7 @@ From this organization, **9 evaluation criteria** emerged:
 **Runtime Layer → 1 criterion**
 9. Runtime Semantics
 
-### Criterion Priority
+## ## Criterion Priority
 
 **Reflecting AI perspective (Section 6):**
 - Community Layer (1 criterion) highest priority
@@ -1069,7 +1069,7 @@ Runtime Continuity (runtime consistency)
 Correction loop convergence
 ```
 
-### Systematization Complete
+## ## Systematization Complete
 
 At this point:
 - Clarified relationship between 7 phases and 4 layers
@@ -1085,7 +1085,7 @@ This systematization completed the transition from thought process to practical 
 
 ---
 
-## Conclusion
+# # Conclusion
 
 This document records the thought process as of late December 2025.
 
