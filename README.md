@@ -44,7 +44,7 @@ This framework's structural approach can be adapted to identify mis-inference pa
 
 ---
 
-## � Quick Start: Diagnose Your Project
+## 🚀 Quick Start: Diagnose Your Project
 
 If you want to diagnose situations where AI mis-infers during code generation in your actual project, use these two documents:
 
