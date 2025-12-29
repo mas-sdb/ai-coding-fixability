@@ -183,6 +183,34 @@ can be structured into the following 7 phases:
 → Return to ③
 ```
 
+```mermaid
+flowchart TD
+
+    A[① Static Knowledge]
+    B[② Generation]
+    C[③ Static Semantic Validation]
+    D[④ Startup Check]
+    E[⑤ Test Execution]
+    F[⑥ Test Feedback]
+    G[⑦ Regeneration]
+
+    A --> B
+    B --> C
+
+    C -->|Failed| G
+    C -->|Passed| D
+
+    D -->|Failed| G
+    D -->|Passed| E
+
+    E --> F
+
+    F -->|Success| H[End]
+    F -->|Failed| G
+
+    G --> C
+```
+
 The purpose is singular:
 
 > **Enable AI to "fix" code.  
