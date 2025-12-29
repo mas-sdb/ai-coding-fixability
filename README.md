@@ -5,12 +5,15 @@
 
 ## 🌟 Overview
 
+This repository provides a practical diagnostic prompt for diagnosing causes of AI misinference during code generation and evaluating countermeasures (prompt improvements, additional metadata, explicit validation instructions, etc.) that should be given to AI. Developers can use this prompt to obtain diagnostics and countermeasures tailored to their project's specific context.
+
+**🚀 Want to diagnose your project now? →** [Quick Start Guide](#-quick-start-diagnose-your-project)
+
+Furthermore, as a framework for thinking to theoretically understand why AI misinfers, we devised a language ecosystem evaluation model.
 This framework provides a novel approach to evaluating programming language ecosystems in the **AI coding era**. Unlike traditional metrics focused on syntax or performance, our model prioritizes **"fixability"** — the ability of an ecosystem to support AI's correction loop through rich semantic information.
 
 **Key Insight:**  
 In AI-assisted development, language strength is determined not by initial code generation quality, but by the ecosystem's capacity to provide semantic transparency for iterative correction.
-
-**🚀 Want to diagnose your project now? →** [Quick Start Guide](#-quick-start-diagnose-your-project)
 
 ---
 

@@ -4,6 +4,8 @@
 
 ## 📌 **About This Document**
 
+This document is created as part of a repository that provides a practical diagnostic prompt for diagnosing causes of AI misinference during code generation and evaluating countermeasures (prompt improvements, additional metadata, explicit validation instructions, etc.) that should be given to AI. Furthermore, as a framework for thinking to theoretically understand why AI misinfers, we devised a language ecosystem evaluation model.
+
 This framework was developed as a **thought experiment** based on practical experience and observations in AI-assisted coding.
 
 **Current Status:**
