@@ -85,7 +85,7 @@ Referencing samples similar to your project configuration helps you understand w
 
 ### **Framework Documents**
 
-This repository contains five interconnected document types:
+This repository contains six interconnected document types:
 
 #### **1. Theoretical Framework ([model.md](./model.md))**
 - **Purpose:** Theoretical foundation with 4-layer architecture and 9-axis evaluation
@@ -102,7 +102,12 @@ This repository contains five interconnected document types:
   - Conversion process to project-specific evaluation axes (7 steps)
   - Customization principles
 
-#### **3. Diagnostic Tool ([diagnostic_prompt.md](./diagnostic_prompt.md))**
+#### **3. Philosophical Principles ([philosophy.md](./philosophy.md))**
+- **Purpose:** Summarizes the framework's design philosophy and principles for long-term stability
+- **Structure:** Principles such as neutrality in AI-assisted coding, respect for values, structural focus, etc.
+- **Audience:** Those who want to understand the philosophical background of the framework, designers, researchers
+
+#### **4. Diagnostic Tool ([diagnostic_prompt.md](./diagnostic_prompt.md))**
 - **Purpose:** Practical diagnostic tool that transforms the 4-layer model into 9 diagnostic axes
 - **Structure:** 9 diagnostic axes for identifying AI mis-inference points
 - **Audience:** AI coding assistant users, project teams, developers writing AGENT.md
@@ -113,12 +118,12 @@ This repository contains five interconnected document types:
   - 📊 **Diagnostic quality depends** on the AI model's training data and capabilities
   - 🔄 **Results may vary** between different AI models or versions
 
-#### **4. Diagnostic Results ([samples/](./samples/))**
+#### **5. Diagnostic Results ([samples/](./samples/))**
 - **Purpose:** Real-world examples of applying the diagnostic prompt to specific language configurations
 - **Structure:** Language + version + context → 9-axis diagnostic results
 - **Audience:** Users seeking concrete examples, teams evaluating their tech stack
 
-#### **5. Thought Process ([model-thought-process.md](./model-thought-process.md))**
+#### **6. Thought Process ([model-thought-process.md](./model-thought-process.md))**
 - **Purpose:** Chronicles the development journey behind this framework
 - **Structure:** A narrative essay tracing the evolution from initial questions to the final 9-axis model
 - **Audience:** Those interested in the reasoning process, framework designers, researchers
@@ -134,6 +139,8 @@ This repository contains five interconnected document types:
 Theoretical Model (model.md)
   ↓ Explains usage and customization
 Usage Guide (model-usage-guide.md)
+  ↓ Explains design philosophy
+Philosophical Principles (philosophy.md)
   ↓ Practical transformation
 Diagnostic Prompt (diagnostic_prompt.md)
   ↓ Applied to real projects
