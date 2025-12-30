@@ -154,18 +154,18 @@ AI が生成するコードに求められる品質も用途によって異な�
 AI がコードを生成し、意味論的に検証し、修正し、再生成するプロセスは、以下の 7 つのフェーズに構造化できる。
 
 ```
-Phase1 静的知識（事前知識）
-Phase2 生成（初期生成）
+Phase1: 静的知識（事前知識）
+Phase2: 生成（初期生成）
    ├ 外部参照
    └ 環境意味論
-Phase3 静的意味論検証
-Phase4 起動チェック
-Phase5 テスト実行
-   ├ Phase5-1 品質検証（アプリケーション/仕様依存）
-   ├ Phase5-2 実行時プロファイリング観測
-   └ Phase5-3 実行時プロファイリング意味論
-Phase6 テストフィードバック（実行時フィードバック）
-Phase7 再生成（修正的生成）
+Phase3: 静的意味論検証
+Phase4: 起動チェック
+Phase5: テスト実行
+   ├ Phase5-1: 品質検証（アプリケーション/仕様依存）
+   ├ Phase5-2: 実行時プロファイリング観測
+   └ Phase5-3: 実行時プロファイリング意味論
+Phase6: テストフィードバック（実行時フィードバック）
+Phase7: 再生成（修正的生成）
    ├ 外部参照
    └ 環境意味論
 → Phase3 に戻る
@@ -205,18 +205,18 @@ flowchart TD
 
 ---
 
-## ## 2.1 Phase1 静的知識（事前知識）
+## ## 2.1 Phase1 : 静的知識（事前知識）
 
 - AI の訓練データ（OSS や Q&A、公式ドキュメント、ブログなど）
 - 言語仕様、標準ライブラリ
 - 一般的なコーディングパターン
 
-## ## 2.2 Phase2 生成（初期生成）
+## ## 2.2 Phase2 : 生成（初期生成）
 
 - AI による初回コード生成
 - プロンプトとコンテキストから
 
-## ## 2.3 Phase3 静的意味論検証（コード意味論の検証）
+## ## 2.3 Phase3 : 静的意味論検証（コード意味論の検証）
 
 - 型チェック
 - 構文検証
@@ -227,7 +227,7 @@ flowchart TD
 ※ここでは「コードの意味論（型・構文・静的解析）」を検証する。
 依存関係の構文的解決はここで行われるが、実際の実行可能性はPhase4で検証する。   
 
-## ## 2.4 Phase4 起動チェック（環境・依存関係の検証）
+## ## 2.4 Phase4 : 起動チェック（環境・依存関係の検証）
 
 - 依存関係の実際の解決とロード
 - 環境変数・設定ファイルの確認
@@ -237,13 +237,13 @@ flowchart TD
 ※ここでは「実行環境の意味論（依存関係の実在性・環境・初期化）」を検証する。
 コンパイルは通るが、依存関係が見つからない、環境が整っていない等で起動できないケースを扱う。
 
-## ## 2.5 Phase5 テスト実行
+## ## 2.5 Phase5 : テスト実行
 
 - ユニットテスト
 - 統合テスト
 - 仕様との照合（アプリケーション依存）
    
-## ## 2.6 Phase6 テストフィードバック（実行時フィードバック）
+## ## 2.6 Phase6 : テストフィードバック（実行時フィードバック）
 
 - テスト結果
   - → 成功した場合はループ終了
@@ -253,7 +253,7 @@ flowchart TD
   - 観測したデータは`事実` 
   - それを`意味的に解釈`する必要がある
    
-## ## 2.7 Phase7 再生成（修正的生成）
+## ## 2.7 Phase7 : 再生成（修正的生成）
 
 - フィードバックを基に修正
 - → Phase3 に戻ってループ
@@ -269,20 +269,20 @@ flowchart TD
 言語エコシステムを評価する 9 つの軸は、**実装時（静的）** と **実行時** という 2 つの次元に沿って整理されている。
 
 ```
-Axis1 Public Knowledge Availability（公開知識の可用性）
-Axis2 Static Semantic Consistency（静的意味論の一貫性）
-Axis3 Semantic Metadata Richness（意味論的メタデータの豊富さ）
-Axis4 Semantic Access & Automation（意味論アクセスと自動化）
-Axis5 Runtime Semantic Continuity（実行時意味論の一貫性）
-Axis6 Dependency Stability（依存関係安定性）
-Axis7 Runtime Specification Conformance（実行時仕様準拠）
-Axis8 Compatibility Culture（互換性文化）
-Axis9 Semantic Extensibility（意味論拡張性）
+Axis1: Public Knowledge Availability（公開知識の可用性）
+Axis2: Static Semantic Consistency（静的意味論の一貫性）
+Axis3: Semantic Metadata Richness（意味論的メタデータの豊富さ）
+Axis4: Semantic Access & Automation（意味論アクセスと自動化）
+Axis5: Runtime Semantic Continuity（実行時意味論の一貫性）
+Axis6: Dependency Stability（依存関係安定性）
+Axis7: Runtime Specification Conformance（実行時仕様準拠）
+Axis8: Compatibility Culture（互換性文化）
+Axis9: Semantic Extensibility（意味論拡張性）
 ```
 
 ---
 
-## ## 3.1 Axis1 Public Knowledge Availability（公開知識の可用性）
+## ## 3.1 Axis1 : Public Knowledge Availability（公開知識の可用性）
 
 | 次元 | 役割 | 例 | 検証ループへの貢献 |
 | - | - | - | - |
@@ -291,7 +291,7 @@ Axis9 Semantic Extensibility（意味論拡張性）
 
 ---
 
-## ## 3.2 Axis2 Static Semantic Consistency（静的意味論の一貫性）
+## ## 3.2 Axis2 : Static Semantic Consistency（静的意味論の一貫性）
 
 | 次元 | 役割 | 例 | 貢献 |
 | - | - | - | - |
@@ -300,7 +300,7 @@ Axis9 Semantic Extensibility（意味論拡張性）
 
 ---
 
-## ## 3.3 Axis3 Semantic Metadata Richness（意味論的メタデータの豊富さ）
+## ## 3.3 Axis3 : Semantic Metadata Richness（意味論的メタデータの豊富さ）
 
 | 次元 | 役割 | 例 | 貢献 |
 | - | - | - | - |
@@ -309,7 +309,7 @@ Axis9 Semantic Extensibility（意味論拡張性）
 
 ---
 
-## ## 3.4 Axis4 Semantic Access & Automation（意味論アクセスと自動化）
+## ## 3.4 Axis4 : Semantic Access & Automation（意味論アクセスと自動化）
 
 | 次元 | 役割 | 例 | 貢献 |
 | - | - | - | - |
@@ -318,7 +318,7 @@ Axis9 Semantic Extensibility（意味論拡張性）
 
 ---
 
-## ## 3.5 Axis5 Runtime Semantic Continuity（実行時意味論の一貫性）
+## ## 3.5 Axis5 : Runtime Semantic Continuity（実行時意味論の一貫性）
 
 | 次元 | 役割 | 例 | 貢献 |
 | - | - | - | - |
@@ -327,7 +327,7 @@ Axis9 Semantic Extensibility（意味論拡張性）
 
 ---
 
-## ## 3.6 Axis6 Dependency Stability（依存関係安定性）
+## ## 3.6 Axis6 : Dependency Stability（依存関係安定性）
 
 | 次元 | 役割 | 例 | 貢献 |
 | - | - | - | - |
@@ -336,7 +336,7 @@ Axis9 Semantic Extensibility（意味論拡張性）
 
 ---
 
-## ## 3.7 Axis7 Runtime Specification Conformance（実行時仕様準拠）
+## ## 3.7 Axis7 : Runtime Specification Conformance（実行時仕様準拠）
 
 | 次元 | 役割 | 例 | 貢献 |
 | - | - | - | - |
@@ -345,7 +345,7 @@ Axis9 Semantic Extensibility（意味論拡張性）
 
 ---
 
-## ## 3.8 Axis8 Compatibility Culture（互換性文化）
+## ## 3.8 Axis8 : Compatibility Culture（互換性文化）
 
 | 次元 | 役割 | 例 | 貢献 |
 | - | - | - | - |
@@ -354,7 +354,7 @@ Axis9 Semantic Extensibility（意味論拡張性）
 
 ---
 
-## ## 3.9 Axis9 Semantic Extensibility（意味論拡張性）
+## ## 3.9 Axis9 : Semantic Extensibility（意味論拡張性）
 
 | 次元 | 役割 | 例 | 貢献 |
 | - | - | - | - |
@@ -368,10 +368,10 @@ Axis9 Semantic Extensibility（意味論拡張性）
 言語エコシステムは以下の 4 つの層に構造化できる。
 
 ```
-Layer1：Semantic Core Layer（意味論コア層）
-Layer2：Semantic Service Layer（意味論サービス層）
-Layer3：Dependency Semantics Layer（依存関係意味論層）
-Layer4：Community Semantics Layer（コミュニティ意味論層）
+Layer1: Semantic Core Layer（意味論コア層）
+Layer2: Semantic Service Layer（意味論サービス層）
+Layer3: Dependency Semantics Layer（依存関係意味論層）
+Layer4: Community Semantics Layer（コミュニティ意味論層）
 ```
 
 - Layer1〜Layer3 は "公式" の意味論

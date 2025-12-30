@@ -168,18 +168,18 @@ The process by which AI generates, semantically verifies, corrects, and regenera
 can be structured into the following 7 phases:
 
 ```
-Phase1 Static Knowledge (Prior Knowledge)
-Phase2 Generation (Initial Generation)
+Phase1: Static Knowledge (Prior Knowledge)
+Phase2: Generation (Initial Generation)
    ├ External Reference
    └ Environment Semantics
-Phase3 Static Semantic Verification
-Phase4 Launch Check
-Phase5 Test Execution
-   ├ Phase5-1 Quality Validation (Application/Specification Dependent)
-   ├ Phase5-2 Runtime Profiling Observation
-   └ Phase5-3 Runtime Profiling Semantics
-Phase6 Test Feedback (Runtime Feedback)
-Phase7 Regeneration (Corrective Generation)
+Phase3: Static Semantic Verification
+Phase4: Launch Check
+Phase5: Test Execution
+   ├ Phase5-1: Quality Validation (Application/Specification Dependent)
+   ├ Phase5-2: Runtime Profiling Observation
+   └ Phase5-3: Runtime Profiling Semantics
+Phase6: Test Feedback (Runtime Feedback)
+Phase7: Regeneration (Corrective Generation)
    ├ External Reference
    └ Environment Semantics
 → Return to Phase3
@@ -222,18 +222,18 @@ Detailed descriptions of each phase follow.
 
 ---
 
-## ## 2.1 Phase1 Static Knowledge (Prior Knowledge)
+## ## 2.1 Phase1 : Static Knowledge (Prior Knowledge)
 
 - AI's training data (OSS, Q&A, official docs, blogs, etc.)
 - Language specifications, standard libraries
 - Common coding patterns
 
-## ## 2.2 Phase2 Generation (Initial Generation)
+## ## 2.2 Phase2 : Generation (Initial Generation)
 
 - Initial code generation by AI
 - From prompts and context
 
-## ## 2.3 Phase3 Static Semantic Verification (Code Semantic Verification)
+## ## 2.3 Phase3 : Static Semantic Verification (Code Semantic Verification)
 
 - Type checking
 - Syntax validation
@@ -244,7 +244,7 @@ Detailed descriptions of each phase follow.
 ※Here we verify "code semantics (types, syntax, static analysis)".
 Syntactic dependency resolution occurs here, but actual executability is verified in Phase4.
 
-## ## 2.4 Phase4 Launch Check (Environment & Dependency Verification)
+## ## 2.4 Phase4 : Launch Check (Environment & Dependency Verification)
 
 - Actual dependency resolution and loading
 - Environment variables and configuration file verification
@@ -254,7 +254,7 @@ Syntactic dependency resolution occurs here, but actual executability is verifie
 ※Here we verify "execution environment semantics (dependency existence, environment, initialization)".
 Handles cases where compilation succeeds but startup fails due to missing dependencies, unconfigured environment, etc.
 
-## ## 2.5 Phase5 Test Execution (Runtime Semantic Verification)
+## ## 2.5 Phase5 : Test Execution (Runtime Semantic Verification)
 
 - **Phase5-1: Quality validation** (depends on app/spec)
   - Unit tests
@@ -273,14 +273,14 @@ Handles cases where compilation succeeds but startup fails due to missing depend
 
 - → If failed, go to Phase7
 
-## ## 2.6 Phase6 Test Feedback (Runtime Feedback)
+## ## 2.6 Phase6 : Test Feedback (Runtime Feedback)
 
 - Error messages
 - Test results
 - Runtime logs
 - Performance bottlenecks
 
-## ## 2.7 Phase7 Regeneration (Corrective Generation)
+## ## 2.7 Phase7 : Regeneration (Corrective Generation)
 
 - AI regenerates code based on feedback
 - Reflect Phase3, Phase4, Phase5, or Phase6 feedback to improve code
@@ -298,19 +298,19 @@ The 9 axes for evaluating language ecosystems are organized
 along two dimensions: **Implementation (Static)** and **Runtime**.
 
 ```
-Axis1 Public Knowledge Availability（公開知識の可用性）
-Axis2 Static Semantic Consistency（静的意味論の一貫性）
-Axis3 Semantic Metadata Richness（意味論的メタデータの豊富さ）
-Axis4 Semantic Access & Automation（意味論アクセスと自動化）
-Axis5 Runtime Semantic Continuity（実行時意味論の一貫性）
-Axis6 Dependency Stability（依存関係安定性）
-Axis7 Runtime Specification Conformance（実行時仕様準拠）
-Axis8 Compatibility Culture（互換性文化）
-Axis9 Semantic Extensibility（意味論拡張性）
+Axis1: Public Knowledge Availability（公開知識の可用性）
+Axis2: Static Semantic Consistency（静的意味論の一貫性）
+Axis3: Semantic Metadata Richness（意味論的メタデータの豊富さ）
+Axis4: Semantic Access & Automation（意味論アクセスと自動化）
+Axis5: Runtime Semantic Continuity（実行時意味論の一貫性）
+Axis6: Dependency Stability（依存関係安定性）
+Axis7: Runtime Specification Conformance（実行時仕様準拠）
+Axis8: Compatibility Culture（互換性文化）
+Axis9: Semantic Extensibility（意味論拡張性）
 ```
 ---
 
-## ## 3.1 Axis1 Public Knowledge Availability
+## ## 3.1 Axis1 : Public Knowledge Availability
 
 | Dimension | Role | Examples | Contribution to Verification Loop |
 | - | - | - | - |
@@ -319,7 +319,7 @@ Axis9 Semantic Extensibility（意味論拡張性）
 
 ---
 
-## ## 3.2 Axis2 Static Semantic Consistency
+## ## 3.2 Axis2 : Static Semantic Consistency
 
 | Dimension | Role | Examples | Contribution |
 | - | - | - | - |
@@ -328,7 +328,7 @@ Axis9 Semantic Extensibility（意味論拡張性）
 
 ---
 
-## ## 3.3 Axis3 Semantic Metadata Richness
+## ## 3.3 Axis3 : Semantic Metadata Richness
 
 | Dimension | Role | Examples | Contribution |
 | - | - | - | - |
@@ -337,7 +337,7 @@ Axis9 Semantic Extensibility（意味論拡張性）
 
 ---
 
-## ## 3.4 Axis4 Semantic Access & Automation
+## ## 3.4 Axis4 : Semantic Access & Automation
 
 | Dimension | Role | Examples | Contribution |
 | - | - | - | - |
@@ -346,7 +346,7 @@ Axis9 Semantic Extensibility（意味論拡張性）
 
 ---
 
-## ## 3.5 Axis5 Runtime Semantic Continuity
+## ## 3.5 Axis5 : Runtime Semantic Continuity
 
 | Dimension | Role | Examples | Contribution |
 | - | - | - | - |
@@ -355,7 +355,7 @@ Axis9 Semantic Extensibility（意味論拡張性）
 
 ---
 
-## ## 3.6 Axis6 Dependency Stability
+## ## 3.6 Axis6 : Dependency Stability
 
 | Dimension | Role | Examples | Contribution |
 | - | - | - | - |
@@ -364,7 +364,7 @@ Axis9 Semantic Extensibility（意味論拡張性）
 
 ---
 
-## ## 3.7 Axis7 Runtime Specification Conformance
+## ## 3.7 Axis7 : Runtime Specification Conformance
 
 | Dimension | Role | Examples | Contribution |
 | - | - | - | - |
@@ -373,7 +373,7 @@ Axis9 Semantic Extensibility（意味論拡張性）
 
 ---
 
-## ## 3.8 Axis8 Compatibility Culture
+## ## 3.8 Axis8 : Compatibility Culture
 
 | Dimension | Role | Examples | Contribution |
 | - | - | - | - |
@@ -382,7 +382,7 @@ Axis9 Semantic Extensibility（意味論拡張性）
 
 ---
 
-## ## 3.9 Axis9 Semantic Extensibility
+## ## 3.9 Axis9 : Semantic Extensibility
 
 | Dimension | Role | Examples | Contribution |
 | - | - | - | - |
@@ -396,10 +396,10 @@ Axis9 Semantic Extensibility（意味論拡張性）
 Language ecosystems can be structured into the following 4 layers:
 
 ```
-Layer1：Semantic Core Layer（意味論コア層）
-Layer2：Semantic Service Layer（意味論サービス層）
-Layer3：Dependency Semantics Layer（依存関係意味論層）
-Layer4：Community Semantics Layer（コミュニティ意味論層）
+Layer1: Semantic Core Layer（意味論コア層）
+Layer2: Semantic Service Layer（意味論サービス層）
+Layer3: Dependency Semantics Layer（依存関係意味論層）
+Layer4: Community Semantics Layer（コミュニティ意味論層）
 ```
 
 - Layers 1-3 represent "official" semantics
@@ -407,7 +407,7 @@ Layer4：Community Semantics Layer（コミュニティ意味論層）
 
 ---
 
-## ## 4.1 Layer1: Semantic Core Layer
+## ## 4.1 Layer1 : Semantic Core Layer
 
 - Type system  
 - Scope rules  
@@ -422,7 +422,7 @@ Represents the language specification itself, including types, scopes, memory mo
 
 ---
 
-## ## 4.2 Layer 2: Semantic Service Layer
+## ## 4.2 Layer2 : Semantic Service Layer
 
 - AST / Symbol API  
 - Type information API  
@@ -452,7 +452,7 @@ It also includes services (toolchain) for verifying, analyzing, and manipulating
 
 ---
 
-## ## 4.3 Layer 3: Dependency Semantics Layer
+## ## 4.3 Layer3 : Dependency Semantics Layer
 
 - Standard library  
 - Package management systems (npm, pip, cargo, etc.)  
@@ -468,7 +468,7 @@ While Layer 2 represents the "mechanisms for handling" these, Layer 3 represents
 
 ---
 
-## ## 4.4 Layer 4: Community Semantics Layer
+## ## 4.4 Layer4 : Community Semantics Layer
 
 - OSS  
 - Q&A  
