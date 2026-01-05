@@ -15,6 +15,7 @@ permalink: /:categories/:title/
 
 defaults:
   - scope:
-      path: "ja"
+      path: "ja/"
+      type: "pages"
     values:
       lang: "ja"
