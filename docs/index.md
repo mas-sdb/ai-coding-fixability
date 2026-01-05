@@ -3,7 +3,7 @@ title: "English"
 ---
 ### *Fixability × Semantic Transparency = Stable AI-Assisted Coding* 
 
-[🌐 English](./index.md) | [🌐 日本語](./ja/index.md)
+[🌐 English](/ai-coding-fixability/) | [🌐 日本語](/ai-coding-fixability/ja/)
 
 AI-assisted coding is not defined by how accurately AI writes code on the first attempt.  
 Its true productivity comes from **how reliably AI can correct its own mistakes (Fixability)**.  
