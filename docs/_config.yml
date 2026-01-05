@@ -6,8 +6,6 @@ baseurl: "/ai-coding-fixability"
 lang: "en"
 timezone: "Asia/Tokyo"
 
-theme: minima
-
 plugins:
   - jekyll-sitemap
   - jekyll-feed
