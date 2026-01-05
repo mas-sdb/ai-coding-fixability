@@ -1,7 +1,6 @@
-# 🌐 **AI Coding Fixability Framework**  
-### *Fixability × Semantic Transparency = Stable AI-Assisted Coding*
-
-[English Version](../index.md) | [日本語版](./index.md)
+--- 
+title: "日本語" 
+---
 
 AI コーディングは、初回生成の正確さよりも、  
 **誤りをどれだけ安定して修正できるか（Fixability）** によって生産性が決まります。  
