@@ -1,7 +1,6 @@
-# 🌐 **AI Coding Fixability Framework**  
-### *Fixability × Semantic Transparency = Stable AI-Assisted Coding*
-
-[English Version](./index.md) | [日本語版](./ja/index.md)
+--- 
+title: "English" 
+---
 
 AI-assisted coding is not defined by how accurately AI writes code on the first attempt.  
 Its true productivity comes from **how reliably AI can correct its own mistakes (Fixability)**.  
